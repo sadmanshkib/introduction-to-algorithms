@@ -1,0 +1,15 @@
+*.exe
+*.o
+*.obj
+*.out
+*.class
+*.log
+.cph/
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+input.txt
+output.txt
+Thumbs.db
+.DS_Store

@@ -14,18 +14,16 @@ bool valid(int i, int j)
     return true;
 }
 
-
-
-void bfs(int si,int sj)
+void bfs(int si, int sj)
 {
-    pair<int,int> p = {si,sj};
-    queue<pair<int,int>> q;
+    pair<int, int> p = {si, sj};
+    queue<pair<int, int>> q;
     q.push(p);
     vis[p.first][p.second] = true;
 
     while (!q.empty())
     {
-        pair<int,int> pa = q.front();
+        pair<int, int> pa = q.front();
         q.pop();
 
         // for(pair<int,int> cld : grid[pa.first][pa.second])
@@ -34,20 +32,17 @@ void bfs(int si,int sj)
         //      {
         //         q.push(cld);
         //         vis[cld] = true;
-        //      }   
+        //      }
         // }
         for (int i = 0; i < 4; i++)
         {
             int ci = pa.first + d[i].first;
-            int cj =pa.second + d[i].second;
+            int cj = pa.second + d[i].second;
 
-            if(valid(ci,cj) && !vis[ci][cj])
-                q.push({ci,cj});
-                
+            if (valid(ci, cj) && !vis[ci][cj])
+                q.push({ci, cj});
         }
-        
     }
-    
 }
 
 int main()
@@ -67,6 +62,6 @@ int main()
     cin >> si >> sj;
     // dfs(si, sj);
 
-    bfs(si,sj);
+    bfs(si, sj);
     return 0;
 }
